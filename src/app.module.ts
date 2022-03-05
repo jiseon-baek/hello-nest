@@ -1,11 +1,10 @@
 import { Module } from '@nestjs/common';
-import { UsersController } from './users/users.controller';
-import { UsersService } from './users/users.service';
-import { EmailService } from './email/email.service';
+import { UsersModule } from './users/users.module';
+import { EmailModule } from './email/email.module';
 
 @Module({ //that function called decorator can add functionaliry to a Class
-  imports: [],
-  controllers: [UsersController], //takes url and excute functions like router of nodejs
-  providers: [UsersService, EmailService],
+  imports: [UsersModule, EmailModule],
+  controllers: [], //takes url and excute functions like router of nodejs
+  providers: [],
 })
 export class AppModule { }
